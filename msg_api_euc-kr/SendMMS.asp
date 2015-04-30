@@ -10,7 +10,7 @@
 
 <%
 
-Dim messageService, result, data
+Dim ms, result, data
 
 Set data = Server.CreateObject("Scripting.Dictionary")
 data.add "msg_type", "mms"
@@ -24,10 +24,10 @@ data.add "image", "C:\mms\sample.jpg"
 data.add "phone", "수신번호_1" '한 명 전송
 'data.add "phone", "수신번호_1, 수신번호_2" '여러 명 전송
 
-Set messageService = New MessageService
-messageService.getToken client_id, api_key
+Set ms = New MessageService
+ms.getToken client_id, api_key
 
-result = messageService.sendMessage(data)
+result = ms.sendMessage(data)
 
 Set data = Nothing
 

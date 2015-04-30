@@ -10,15 +10,15 @@
 
 <%
 
-Dim messageService, result, data
+Dim ms, result, data
 
 Set data = Server.CreateObject("Scripting.Dictionary")
 data.add "msg_serial", "¾¾¸®¾ó Å°"
 
-Set messageService = New MessageService
-messageService.getToken client_id, api_key
+Set ms = New MessageService
+ms.getToken client_id, api_key
 
-result = messageService.cancelReservation(data)
+result = ms.cancelReservation(data)
 
 Response.Write result
 

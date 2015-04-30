@@ -10,17 +10,17 @@
 
 <%
 
-Dim messageService, result, data
+Dim ms, result, data
 
 Set data = Server.CreateObject("Scripting.Dictionary")
 data.add "msg_serial", "씨리얼 키"
 data.add "list_count", "가져올 갯수"
 data.add "page", "페이지 번호"
 
-Set messageService = New MessageService
-messageService.getToken client_id, api_key
+Set ms = New MessageService
+ms.getToken client_id, api_key
 
-result = messageService.getMessage(data)
+result = ms.getMessage(data)
 
 Response.Write result
 

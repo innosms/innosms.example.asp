@@ -10,11 +10,11 @@
 
 <%
 
-Dim messageService
+Dim ms
 
-Set messageService = New MessageService
-messageService.getToken client_id, api_key
+Set ms = New MessageService
+ms.getToken client_id, api_key
 
-Response.Write messageService.getBalance()
+Response.Write ms.getBalance()
 
 %>
